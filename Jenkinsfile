@@ -6,7 +6,7 @@ pipeline {
 	
 		stage('Build') {
 			steps {
-				echo "Building.."
+				echo "Building..."
 				sh 'sudo su'
 				sh 'docker run -v `pwd`:/build damoncheng/public:debian-build-v1'
 			}
@@ -14,14 +14,14 @@ pipeline {
 
 		stage('Test') {
 			steps {
-				echo "Testing.."
+				echo "Testing..."
 				sh './main config/hello.o'
 			}
 		}
 
 		stage('Deploy') {
 			steps {
-				echo "Deploying.."
+				echo "Deploying..."
 				sh 'echo "www.imd.com" > ~/rsyncd.secrets'
 				sh 'chmod 700 ~/rsyncd.secrets'
 
