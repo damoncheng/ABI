@@ -50,7 +50,7 @@ pipeline {
 	post {
 	
 		failure {
-			mail to: "snhellogg@gmail.com", subject: 'The Pipeline failed :(', body: 'hello jenkins'
+			mail to: "snhellogg@gmail.com", subject: 'The Pipeline failed :(', body: 'hello jenkins one'
 		}
 	
 	}
