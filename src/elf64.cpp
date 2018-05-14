@@ -637,8 +637,8 @@ void ELF::echo_elf_section()
 			cout << endl;
 
 			cout <<  setw(MID_WIDTH) << "Offset"  
+				 <<  setw(MID_WIDTH) << "Info" 
 				 <<  setw(MID_WIDTH) << "Type"  
-				 <<  setw(MID_WIDTH) << "Value" 
 				 <<  setw(MID_WIDTH)<< "Append Name";
 			cout << endl;
 
@@ -648,9 +648,9 @@ void ELF::echo_elf_section()
 
 				 cout << setw(MID_WIDTH) << hex << rela_entry.r_offset << dec;
 
-				 cout << setw(MID_WIDTH) << hex << ELF64_R_TYPE(rela_entry.r_info)  << dec;
-
 				 cout << setw(MID_WIDTH) << hex << ELF64_R_INFO(ELF64_R_SYM(rela_entry.r_info), ELF64_R_TYPE(rela_entry.r_info))  << dec;
+
+				 cout << setw(MID_WIDTH) << hex << ELF64_R_TYPE(rela_entry.r_info)  << dec;
 
 				 cout << setw(MID_WIDTH) << get_symbol_entry_name(section_header[i].sh_link, ELF64_R_SYM(rela_entry.r_info));
 
