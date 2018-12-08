@@ -16,7 +16,7 @@ pipeline {
 				echo "Testing..."
                                 sh 'echo "pwd : `pwd`"'
                                 sh 'echo "ls : `ls`"'
-				sh './main config/hello.o'
+				sh '`pwd`/main `pwd`/config/hello.o'
 			}
 		}
 
