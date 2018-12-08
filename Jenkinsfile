@@ -7,7 +7,6 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Building..."
-				sh 'sudo su'
 				sh 'docker run -v `pwd`:/build damoncheng/public:debian-build-v1'
 			}
 		}
