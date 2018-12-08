@@ -14,9 +14,7 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo "Testing..."
-                                sh 'echo "pwd : `pwd`"'
-                                sh 'echo "ls : `ls`"'
-				sh '`pwd`/main `pwd`/config/hello.o'
+				sh './main config/hello.o'
 			}
 		}
 
